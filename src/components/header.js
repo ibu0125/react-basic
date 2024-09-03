@@ -1,25 +1,23 @@
 import React from "react";
 import "./Header.css";
 
-const Header = () => {
+function Header({ title, menuItems }) {
   return (
     <header className="header">
-      <div className="logo">My Website</div>
+      <div className="logo">{title}</div>
       <nav>
         <ul className="nav-links">
-          <li>
-            <a href="#home">Home</a>
-          </li>
-          <li>
-            <a href="#about">about</a>
-          </li>
-          <li>
-            <a href="#contact">contact</a>
-          </li>
+          {menuItems.map((item, index) => (
+            <li key={index}>
+              <a href={`#${item}`} className="nav-link">
+                {item}
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>
   );
-};
+}
 
 export default Header;
