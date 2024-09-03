@@ -1,0 +1,40 @@
+.home {
+  height: 100vh;
+  position: relative;
+}
+
+.main-contents {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.headLine {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 200%;
+  color: white;
+}
+
+.links {
+  padding: 0;
+  padding-top: 8%;
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+  height: 50%;
+}
+
+.links li {
+  margin-right: 25%;
+}
+
+.links li:last-child {
+  margin-right: 0;
+}

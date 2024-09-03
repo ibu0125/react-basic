@@ -1,0 +1,14 @@
+html {
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background-image: url(../imges/pexels-jplenio-1632788.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.App {
+  height: 100vh;
+}

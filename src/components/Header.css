@@ -2,12 +2,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
+  background-color: rgba(255, 255, 255, 0);
   padding: 10px 20px;
   color: white;
 }
 
 .logo {
+  user-select: none;
   font-size: 24px;
   font-weight: bold;
 }
@@ -16,6 +17,7 @@
   list-style: none;
   display: flex;
   gap: 20px;
+  user-select: none;
 }
 
 .nav-links li a {
