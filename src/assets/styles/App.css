@@ -4,10 +4,6 @@ html {
   overflow: hidden;
   margin: 0;
   padding: 0;
-  background-image: url(../imges/pexels-jplenio-1632788.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 body {
@@ -15,5 +11,106 @@ body {
 }
 
 .App {
+  position: relative;
   height: 100vh;
+  overflow: hidden;
+  perspective: 1500px; /* 3D効果の深度を設定 */
+}
+
+.background-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d; /* 3D変換を適用します */
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.8s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.background-enter {
+  transform: rotateY(90deg); /* ページがめくれる初期状態 */
+  opacity: 0;
+}
+
+.background-enter-active {
+  transform: rotateY(0deg); /* ページがめくれる最終状態 */
+  opacity: 1;
+}
+
+.background-exit {
+  transform: rotateY(0deg); /* ページが戻る初期状態 */
+  opacity: 1;
+}
+
+.background-exit-active {
+  transform: rotateY(-90deg); /* ページがめくれる終了状態 */
+  opacity: 0;
+}
+
+.home {
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.main-contents {
+  position: absolute;
+  top: 57%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.headLine {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 200%;
+  color: white;
+}
+
+.links {
+  padding: 0;
+  padding-top: 8%;
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+  height: 50%;
+}
+
+.links li {
+  margin-right: 25%;
+  font-size: 130%;
+  color: white;
+}
+
+.links li:last-child {
+  margin-right: 0;
+}
+
+.links li a {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.links li a:active {
+  color: brown;
+}
+
+a {
+  text-decoration: none;
 }

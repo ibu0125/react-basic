@@ -1,7 +1,7 @@
 import React from "react";
 import "./Home.css";
 
-function Home({ headLine, links }) {
+function Home({ headLine, links, onLinkClick }) {
   return (
     <div className="home">
       <div className="main-contents">
@@ -9,8 +9,15 @@ function Home({ headLine, links }) {
         <ul className="links">
           {links.map((link, index) => (
             <li key={index}>
-              <a href={`#${link}`} className="link">
-                {link}
+              <a
+                href={`#${link}`}
+                className="link"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onLinkClick(link.image);
+                }}
+              >
+                {link.name}
               </a>
             </li>
           ))}
