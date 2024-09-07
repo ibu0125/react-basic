@@ -22,7 +22,7 @@ function App() {
     links: [
       {
         name: "View Projects",
-        image: "/imges/pexels-jplenio-1632788.jpg",
+        // image: "/imges/pexels-jplenio-1632788.jpg",
       },
       {
         name: "Contact Me",
@@ -53,34 +53,32 @@ function App() {
 
     setTimeout(() => {
       setBackgroundImage(newImageUrl); // 背景画像のURLを更新
+
       setContents((prevContent) => ({
         ...prevContent,
-        headLine:
-          newImageUrl === "/imges/pexels-jplenio-1632788.jpg"
-            ? "Welcome Back!"
-            : "New Image!",
-        links:
-          newImageUrl === "/imges/pexels-jplenio-1632788.jpg"
-            ? [
-                {
-                  name: "View Projects",
-                  image: "/imges/pexels-wangming-photo-115695-354941.jpg",
-                },
-                {
-                  name: "Contact Me",
-                  // image: "/imges/pexels-wangming-photo-115695-354941.jpg",
-                },
-              ]
-            : [
-                {
-                  name: "New Projects",
-                  image: "/imges/pexels-jplenio-1632788.jpg",
-                },
-                {
-                  name: "New Contact",
-                  image: "/images/pexels-new-contact.jpg",
-                },
-              ],
+        headLine: "My Works",
+        links: [],
+        // newImageUrl === "/imges/pexels-jplenio-1632788.jpg"
+        //   ? [
+        //       {
+        //         name: "View Projects",
+        //         // image: "/imges/pexels-wangming-photo-115695-354941.jpg",
+        //       },
+        //       {
+        //         name: "Contact Me",
+        //         // image: "/imges/pexels-wangming-photo-115695-354941.jpg",
+        //       },
+        //     ]
+        //   : [
+        //       {
+        //         name: "New Projects",
+        //         image: "/imges/pexels-jplenio-1632788.jpg",
+        //       },
+        //       {
+        //         name: "New Contact",
+        //         image: "/images/pexels-new-contact.jpg",
+        //       },
+        //     ],
       }));
       console.log(linkName);
       if (linkName === "View Projects") {

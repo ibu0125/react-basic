@@ -121,8 +121,8 @@ const Canvas = () => {
           const angle = Math.atan2(distanceY, distanceX);
 
           // 速度を調整
-          point.dx -= Math.cos(angle) * 0.8;
-          point.dy -= Math.sin(angle) * 0.8;
+          point.dx -= Math.cos(angle) * 0.3;
+          point.dy -= Math.sin(angle) * 0.3;
         } else if (distance > 120) {
           // 点がマウスから離れた場合、速度を元に戻す
           point.dx = point.originalDx;
