@@ -14,7 +14,7 @@ function Home({ headLine, links, onLinkClick }) {
                 className="link"
                 onClick={(e) => {
                   e.preventDefault();
-                  onLinkClick(link.image);
+                  onLinkClick(link.image, link.name);
                 }}
               >
                 {link.name}

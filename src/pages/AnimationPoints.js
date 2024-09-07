@@ -79,6 +79,29 @@ const Canvas = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      const canvas = canvasRef.current;
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      // キャンバスサイズが変わったら点の位置を再設定
+      points.current.forEach((point) => {
+        point.x = Math.random() * canvas.width;
+        point.y = Math.random() * canvas.height;
+      });
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // 初期サイズ設定
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   // マウス位置に基づいて点の動きを調整
   useEffect(() => {
     const adjustPointsBasedOnMouse = () => {
