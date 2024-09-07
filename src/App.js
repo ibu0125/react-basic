@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { CSSTransition } from "react-transition-group";
+import Canvas from "./pages/AnimationPoints.js";
 import Home from "./pages/Home.js";
 import Header from "./components/header.js";
 import "./assets/styles/App.css";
@@ -73,6 +74,7 @@ function App() {
         title={headerTitle}
         menuItems={["Home", "Project", "About", "Contact"]}
       />
+
       <Home
         headLine={contents.headLine}
         links={contents.links}
@@ -90,6 +92,7 @@ function App() {
             style={{ backgroundImage: `url(${backgroundImage})` }}
           />
         </CSSTransition>
+        <Canvas />
       </div>
       <CSSTransition
         in={showContent}
