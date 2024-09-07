@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import Canvas from "./pages/AnimationPoints.js";
 import Home from "./pages/Home.js";
@@ -11,6 +11,8 @@ function App() {
   const [backgroundImage, setBackgroundImage] = useState(
     "/imges/pexels-jplenio-1632788.jpg"
   );
+
+  const [isScrollable, setIsScrollable] = useState(false);
   const [showBackground, setShowBackground] = useState(true); // 背景画像の表示管理
   const [showContent, setShowContent] = useState(true); // コンテンツの表示管理
   const headerTitle = "OtterWave";
@@ -29,9 +31,26 @@ function App() {
     ],
   });
 
-  const handleLinkClick = (newImageUrl) => {
+  useEffect(() => {
+    document.documentElement.style.overflow = isScrollable ? "auto" : "hidden";
+    return () => {
+      document.documentElement.style.overflow = "hidden";
+    };
+  }, [isScrollable]);
+
+  const handleLinkClickHidden = () => {
+    setIsScrollable(false);
+  };
+
+  const handleLinkClickAuto = () => {
+    setIsScrollable(true);
+  };
+
+  const handleLinkClick = (newImageUrl, linkName) => {
     setShowBackground(false); // 背景をフェードアウトさせる
     setShowContent(false); // コンテンツをフェードアウト
+    // setIsScrollable(true);
+
     setTimeout(() => {
       setBackgroundImage(newImageUrl); // 背景画像のURLを更新
       setContents((prevContent) => ({
@@ -45,11 +64,11 @@ function App() {
             ? [
                 {
                   name: "View Projects",
-                  image: "/imges/pexels-jplenio-1632788.jpg",
+                  image: "/imges/pexels-wangming-photo-115695-354941.jpg",
                 },
                 {
                   name: "Contact Me",
-                  image: "/imges/pexels-wangming-photo-115695-354941.jpg",
+                  // image: "/imges/pexels-wangming-photo-115695-354941.jpg",
                 },
               ]
             : [
@@ -63,6 +82,12 @@ function App() {
                 },
               ],
       }));
+      console.log(linkName);
+      if (linkName === "View Projects") {
+        handleLinkClickAuto();
+      } else {
+        handleLinkClickHidden();
+      }
       setShowBackground(true); // 新しい背景をフェードインさせる
       setShowContent(true); // コンテンツをフェードインさせる
     }, 1200); // トランジションの時間に合わせて設定
@@ -78,7 +103,9 @@ function App() {
       <Home
         headLine={contents.headLine}
         links={contents.links}
-        onLinkClick={handleLinkClick}
+        onLinkClick={(newImageUrl, linkName) =>
+          handleLinkClick(newImageUrl, linkName)
+        }
       />
       <div className="background-wrapper">
         <CSSTransition
