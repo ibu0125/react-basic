@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.css";
 
-function Header({ title, menuItems }) {
+function Header({ title, menuItems, onLinkClick }) {
   return (
     <header className="header">
       <div className="logo">{title}</div>
@@ -9,8 +9,15 @@ function Header({ title, menuItems }) {
         <ul className="nav-links">
           {menuItems.map((item, index) => (
             <li key={index}>
-              <a href={`#${item}`} className="nav-link">
-                {item}
+              <a
+                href={`#${item}`}
+                className="nav-link"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onLinkClick(item.image, item.name);
+                }}
+              >
+                {item.name}
               </a>
             </li>
           ))}

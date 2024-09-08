@@ -4,7 +4,7 @@ html {
   /* overflow: hidden; */
   margin: 0;
   padding: 0;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 1);
 }
 
 body {
@@ -14,7 +14,7 @@ body {
 .App {
   position: relative;
   height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
   perspective: 1500px; /* 3D効果の深度を設定 */
 }
 
@@ -80,33 +80,32 @@ Canvas {
 }
 
 .content {
-  position: absolute;
-  top: 57%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  padding: 100px 20px;
   width: 100%;
-  opacity: 0;
   transition: transform 1.2s ease-in-out, opacity 1.2s ease-in-out;
+  overflow-x: hidden;
 }
 
+/* .content-enter と .content-enter-active */
 .content-enter {
   opacity: 0;
-  transform: rotateY(90deg) scale(0.5); /* 初期状態 */
+  transform: translateY(-20px); /* 初期状態 */
 }
 
 .content-enter-active {
   opacity: 1;
-  transform: rotateY(0deg) scale(1); /* 最終状態 */
+  transform: translateY(0); /* 最終状態 */
 }
 
+/* .content-exit と .content-exit-active */
 .content-exit {
   opacity: 1;
-  transform: rotateY(0deg) scale(1); /* 初期状態 */
+  transform: translateY(0); /* 初期状態 */
 }
 
 .content-exit-active {
   opacity: 0;
-  transform: rotateY(-90deg) scale(0.5); /* 最終状態 */
+  transform: translateY(20px); /* 最終状態 */
 }
 
 .home {

@@ -3,6 +3,7 @@ import { CSSTransition } from "react-transition-group";
 import Canvas from "./pages/AnimationPoints.js";
 import Home from "./pages/Home.js";
 import Header from "./components/header.js";
+import MainContents from "./pages/MainContents.js";
 import "./assets/styles/App.css";
 // import backgroundImage1 from "./images/pexels-jplenio-1632788.jpg";
 // import backgroundImage2 from "./images/pexels-wangming-photo-115695-354941.jpg";
@@ -15,6 +16,7 @@ function App() {
   const [isScrollable, setIsScrollable] = useState(false);
   const [showBackground, setShowBackground] = useState(true); // 背景画像の表示管理
   const [showContent, setShowContent] = useState(true); // コンテンツの表示管理
+  const [showMainContents, setShowMainContents] = useState(false);
   const headerTitle = "OtterWave";
 
   const [contents, setContents] = useState({
@@ -32,7 +34,9 @@ function App() {
   });
 
   useEffect(() => {
-    document.documentElement.style.overflow = isScrollable ? "auto" : "hidden";
+    document.documentElement.style.overflowY = isScrollable
+      ? "scroll"
+      : "hidden";
     return () => {
       document.documentElement.style.overflow = "hidden";
     };
@@ -50,52 +54,60 @@ function App() {
     setShowBackground(false); // 背景をフェードアウトさせる
     setShowContent(false); // コンテンツをフェードアウト
     // setIsScrollable(true);
+    const timeoutDuration = linkName === "Home" ? 0 : 1200;
 
     setTimeout(() => {
       setBackgroundImage(newImageUrl); // 背景画像のURLを更新
 
-      setContents((prevContent) => ({
-        ...prevContent,
-        headLine: "My Works",
-        links: [],
-        // newImageUrl === "/imges/pexels-jplenio-1632788.jpg"
-        //   ? [
-        //       {
-        //         name: "View Projects",
-        //         // image: "/imges/pexels-wangming-photo-115695-354941.jpg",
-        //       },
-        //       {
-        //         name: "Contact Me",
-        //         // image: "/imges/pexels-wangming-photo-115695-354941.jpg",
-        //       },
-        //     ]
-        //   : [
-        //       {
-        //         name: "New Projects",
-        //         image: "/imges/pexels-jplenio-1632788.jpg",
-        //       },
-        //       {
-        //         name: "New Contact",
-        //         image: "/images/pexels-new-contact.jpg",
-        //       },
-        //     ],
-      }));
       console.log(linkName);
       if (linkName === "View Projects") {
+        setContents((prevContent) => ({
+          ...prevContent,
+          headLine: "My Works",
+          links: [],
+          style: { backgroundcolor: "black" },
+        }));
         handleLinkClickAuto();
+        setShowMainContents(true);
+      } else if (linkName === "Home") {
+        setContents((prevContent) => ({
+          ...prevContent,
+          headLine: "hello world!",
+          links: [
+            {
+              name: "View Projects",
+              // image: "/imges/pexels-jplenio-1632788.jpg",
+            },
+            {
+              name: "Contact Me",
+              image: "/imges/pexels-wangming-photo-115695-354941.jpg",
+            },
+          ],
+        }));
+        setShowMainContents(false);
+        handleLinkClickHidden();
       } else {
+        setShowMainContents(false);
         handleLinkClickHidden();
       }
       setShowBackground(true); // 新しい背景をフェードインさせる
       setShowContent(true); // コンテンツをフェードインさせる
-    }, 1200); // トランジションの時間に合わせて設定
+    }, timeoutDuration); // トランジションの時間に合わせて設定
   };
 
   return (
     <div className="App">
       <Header
         title={headerTitle}
-        menuItems={["Home", "Project", "About", "Contact"]}
+        menuItems={[
+          { name: "Home", image: "/imges/pexels-jplenio-1632788.jpg" },
+          { name: "Project", image: "/path/to/project-image.jpg" },
+          { name: "About", image: "/path/to/about-image.jpg" },
+          { name: "Contact", image: "/path/to/contact-image.jpg" },
+        ]}
+        onLinkClick={(newImageUrl, linkName) =>
+          handleLinkClick(newImageUrl, linkName)
+        }
       />
 
       <Home
@@ -105,6 +117,7 @@ function App() {
           handleLinkClick(newImageUrl, linkName)
         }
       />
+
       <div className="background-wrapper">
         <CSSTransition
           in={showBackground}
@@ -125,7 +138,10 @@ function App() {
         classNames="content"
         unmountOnExit
       >
-        <div className="content">{/* コンテンツの内容をここに追加 */}</div>
+        <div className="content">
+          {" "}
+          {showMainContents && <MainContents links={contents.links} />}
+        </div>
       </CSSTransition>
     </div>
   );
