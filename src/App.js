@@ -18,6 +18,7 @@ function App() {
   const [showContent, setShowContent] = useState(true); // コンテンツの表示管理
   const [showMainContents, setShowMainContents] = useState(false);
   const headerTitle = "OtterWave";
+  // const recalculatePoints = useRef(null);
 
   const [contents, setContents] = useState({
     headLine: "hello world!",
@@ -32,6 +33,11 @@ function App() {
       },
     ],
   });
+
+  // const recalculateWindowSize = () => {
+  //   const event = new Event("resize");
+  //   window.dispatchEvent(event);
+  // };
 
   useEffect(() => {
     document.documentElement.style.overflowY = isScrollable
@@ -48,8 +54,16 @@ function App() {
 
   const handleLinkClickAuto = () => {
     setIsScrollable(true);
+    // if (recalculatePoints.current) {
+    //   recalculatePoints.current(); // キャンバスサイズを再計算
+    // }
   };
 
+  // useEffect(() => {
+  //   if (showMainContents) {
+  //     recalculateWindowSize();
+  //   }
+  // }, [showMainContents]);
   const handleLinkClick = (newImageUrl, linkName) => {
     setShowBackground(false); // 背景をフェードアウトさせる
     setShowContent(false); // コンテンツをフェードアウト
@@ -69,6 +83,7 @@ function App() {
         }));
         handleLinkClickAuto();
         setShowMainContents(true);
+        // recalculateWindowSize();
       } else if (linkName === "Home") {
         setContents((prevContent) => ({
           ...prevContent,
@@ -130,7 +145,7 @@ function App() {
             style={{ backgroundImage: `url(${backgroundImage})` }}
           />
         </CSSTransition>
-        <Canvas />
+        <Canvas />{" "}
       </div>
       <CSSTransition
         in={showContent}

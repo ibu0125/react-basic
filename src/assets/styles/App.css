@@ -1,7 +1,6 @@
 html {
   box-sizing: border-box;
   height: 100vh;
-  /* overflow: hidden; */
   margin: 0;
   padding: 0;
   background-color: rgba(0, 0, 0, 1);
@@ -80,7 +79,7 @@ Canvas {
 }
 
 .content {
-  padding: 100px 20px;
+  margin: 100px 0;
   width: 100%;
   transition: transform 1.2s ease-in-out, opacity 1.2s ease-in-out;
   overflow-x: hidden;
