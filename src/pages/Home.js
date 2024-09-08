@@ -6,7 +6,7 @@ function Home({ headLine, links, onLinkClick }) {
     <div className="home">
       <div className="main-contents">
         <div className="headLine">{headLine}</div>
-        <ul className="links">
+        {/* <ul className="links">
           {links.map((link, index) => (
             <li key={index}>
               <a
@@ -21,7 +21,7 @@ function Home({ headLine, links, onLinkClick }) {
               </a>
             </li>
           ))}
-        </ul>
+        </ul> */}
       </div>
     </div>
   );

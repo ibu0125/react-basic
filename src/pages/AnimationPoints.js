@@ -10,14 +10,18 @@ const Canvas = () => {
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
-    const width = canvas.width;
-    const height = canvas.height;
+    const width = window.innerWidth;
+    const height = document.documentElement.scrollHeight;
     const interval = 1000 / 60; // 60 FPS
+
+    // キャンバスの幅と高さを設定
+    canvas.width = width;
+    canvas.height = height;
 
     // 点の初期化
     const initPoints = () => {
       points.current = [];
-      for (let i = 0; i < 80; i++) {
+      for (let i = 0; i < 220; i++) {
         points.current.push({
           x: Math.random() * width,
           y: Math.random() * height,
@@ -34,8 +38,8 @@ const Canvas = () => {
       ctx.clearRect(0, 0, width, height);
 
       // 線の描画
-      ctx.strokeStyle = "rgba(173,216,230,0.8)";
-      ctx.lineWidth = 0.6;
+      ctx.strokeStyle = "rgba(255,255,255,0.8)";
+      ctx.lineWidth = 0.3;
       ctx.beginPath();
       for (let i = 0; i < points.current.length; i++) {
         const point1 = points.current[i];
@@ -44,8 +48,7 @@ const Canvas = () => {
           const distance = Math.sqrt(
             (point1.x - point2.x) ** 2 + (point1.y - point2.y) ** 2
           );
-          if (distance < 100) {
-            // 結ぶ距離の閾値
+          if (distance < 150) {
             ctx.moveTo(point1.x, point1.y);
             ctx.lineTo(point2.x, point2.y);
           }
@@ -64,8 +67,8 @@ const Canvas = () => {
 
         // 点の描画
         ctx.beginPath();
-        ctx.arc(point.x, point.y, 3, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(173,216,230,0.6)";
+        ctx.arc(point.x, point.y, 2, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(155,255,255,1)";
         ctx.fill();
       });
     };
@@ -82,13 +85,16 @@ const Canvas = () => {
   useEffect(() => {
     const handleResize = () => {
       const canvas = canvasRef.current;
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      const width = window.innerWidth;
+      const height = document.documentElement.scrollHeight;
+
+      canvas.width = width;
+      canvas.height = height;
 
       // キャンバスサイズが変わったら点の位置を再設定
       points.current.forEach((point) => {
-        point.x = Math.random() * canvas.width;
-        point.y = Math.random() * canvas.height;
+        point.x = Math.random() * width;
+        point.y = Math.random() * height;
       });
     };
 
@@ -141,7 +147,7 @@ const Canvas = () => {
   // マウスの動きを監視
   useEffect(() => {
     const handleMouseMove = (event) => {
-      setMousePosition({ x: event.clientX, y: event.clientY });
+      setMousePosition({ x: event.pageX, y: event.pageY });
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -151,14 +157,7 @@ const Canvas = () => {
     };
   }, []);
 
-  return (
-    <canvas
-      ref={canvasRef}
-      width={window.innerWidth}
-      height={window.innerHeight}
-      style={{ display: "block" }}
-    />
-  );
+  return <canvas ref={canvasRef} style={{ display: "block" }} />;
 };
 
 export default Canvas;
