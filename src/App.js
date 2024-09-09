@@ -141,7 +141,7 @@ function App() {
             style={{ backgroundImage: `url(${backgroundImage})` }}
           />
         </CSSTransition>
-        <Canvas />{" "}
+        <Canvas />
       </div>
       <CSSTransition
         in={showContent}

@@ -3,7 +3,7 @@ import "./Header.css";
 
 function Header({ title, menuItems, onLinkClick }) {
   return (
-    <header className="header">
+    <header className="header" style={{ position: "fixed" }}>
       <div className="logo">{title}</div>
       <nav>
         <ul className="nav-links">
