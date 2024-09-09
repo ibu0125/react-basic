@@ -1,11 +1,14 @@
 import React from "react";
 // import Canvas from "./AnimationPoints.js";
 import "./MainContents.css";
+import AnimatedTextSide from "./AnimatedTextSide.js";
 
 function MainContents({ links }) {
   return (
     <div className="content">
-      <div className="head-line">My Works</div>
+      <div className="head-line">
+        <AnimatedTextSide text={"My Works"} />
+      </div>
       <div className="main-contents-wrapper">
         <div className="card">
           <svg

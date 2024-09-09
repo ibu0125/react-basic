@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { CSSTransition } from "react-transition-group";
-import Canvas from "./pages/AnimationPoints.js";
-import Home from "./pages/Home.js";
-import Header from "./components/header.js";
-import MainContents from "./pages/MainContents.js";
+import Canvas from "./components/pages/AnimationPoints.js";
+import Home from "./components/pages/Home.js";
+import Header from "./components/pages/header";
+import MainContents from "../src/components/pages/MainContents.js";
 import "./assets/styles/App.css";
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
   // const recalculatePoints = useRef(null);
 
   const [contents, setContents] = useState({
-    headLine: "hello world!",
+    headLine: "Hello　World!",
     links: [
       {
         name: "View Projects",
