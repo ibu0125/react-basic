@@ -21,7 +21,7 @@ const Canvas = () => {
     // 点の初期化
     const initPoints = () => {
       points.current = [];
-      for (let i = 0; i < 220; i++) {
+      for (let i = 0; i < 300; i++) {
         points.current.push({
           x: Math.random() * width,
           y: Math.random() * height,
@@ -48,7 +48,7 @@ const Canvas = () => {
           const distance = Math.sqrt(
             (point1.x - point2.x) ** 2 + (point1.y - point2.y) ** 2
           );
-          if (distance < 150) {
+          if (distance < 300) {
             ctx.moveTo(point1.x, point1.y);
             ctx.lineTo(point2.x, point2.y);
           }
@@ -68,7 +68,7 @@ const Canvas = () => {
         // 点の描画
         ctx.beginPath();
         ctx.arc(point.x, point.y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(155,255,255,1)";
+        ctx.fillStyle = "rgba(155,255,255,0.8)";
         ctx.fill();
       });
     };

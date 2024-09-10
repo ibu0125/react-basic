@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import Canvas from "./components/pages/AnimationPoints.js";
 import Home from "./components/pages/Home.js";
-import Header from "./components/pages/header";
-import MainContents from "../src/components/pages/MainContents.js";
+import Header from "./components/pages/header.js";
+import MainContents from "./components/pages/MainContents.js";
 import "./assets/styles/App.css";
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
   );
 
   // const [isScrollable, setIsScrollable] = useState(true);
-  // const [showBackground, setShowBackground] = useState(true); // 背景画像の表示管理
+  // const [showBackground, setShowBackground] = useState(true); // 背景画像の表示管
   const [showContent, setShowContent] = useState(true); // コンテンツの表示管理
   // const [showMainContents, setShowMainContents] = useState(false);
   const headerTitle = "OtterWave";
