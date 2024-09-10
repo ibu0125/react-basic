@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-basic-scroll/static/css/main.5723ec4e.css",
+    "main.js": "/react-basic-scroll/static/js/main.f34b6581.js",
+    "index.html": "/react-basic-scroll/index.html",
+    "main.5723ec4e.css.map": "/react-basic-scroll/static/css/main.5723ec4e.css.map",
+    "main.f34b6581.js.map": "/react-basic-scroll/static/js/main.f34b6581.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5723ec4e.css",
+    "static/js/main.f34b6581.js"
+  ]
+}
