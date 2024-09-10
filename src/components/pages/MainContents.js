@@ -63,43 +63,43 @@ const skillSetData = [
   {
     id: 1,
     title: "HTML",
-    icon: "/imges/landing-page.png",
-    evaluation: "/imges/landing-page.png",
+    icon: `${process.env.PUBLIC_URL}/images/logo.png`,
+    evaluation: `${process.env.PUBLIC_URL}/images/logo.png`,
     text: "Some quick example text to build on the card title and make up the bulk of the card's content.",
   },
   {
     id: 2,
     title: "CSS",
-    icon: "/imges/landing-page.png",
-    evaluation: "/imges/landing-page.png",
+    icon: `${process.env.PUBLIC_URL}/images/logo.png`,
+    evaluation: `${process.env.PUBLIC_URL}/images/logo.png`,
     text: "Some quick example text to build on the card title and make up the bulk of the card's content.",
   },
   {
     id: 3,
     title: "JavaScript",
-    icon: "/imges/landing-page.png",
-    evaluation: "/imges/landing-page.png",
+    icon: `${process.env.PUBLIC_URL}/images/logo.png`,
+    evaluation: `${process.env.PUBLIC_URL}/images/logo.png`,
     text: "Some quick example text to build on the card title and make up the bulk of the card's content.",
   },
   {
     id: 4,
     title: "React",
-    icon: "/imges/landing-page.png",
-    evaluation: "/imges/landing-page.png",
+    icon: `${process.env.PUBLIC_URL}/images/logo.png`,
+    evaluation: `${process.env.PUBLIC_URL}/images/logo.png`,
     text: "Some quick example text to build on the card title and make up the bulk of the card's content.",
   },
   {
     id: 5,
     title: "C",
-    icon: "/imges/landing-page.png",
-    evaluation: "/imges/landing-page.png",
+    icon: `${process.env.PUBLIC_URL}/images/logo.png`,
+    evaluation: `${process.env.PUBLIC_URL}/images/logo.png`,
     text: "Some quick example text to build on the card title and make up the bulk of the card's content.",
   },
   {
     id: 6,
     title: "Go",
-    icon: "/imges/landing-page.png",
-    evaluation: "/imges/landing-page.png",
+    icon: `${process.env.PUBLIC_URL}/images/logo.png`,
+    evaluation: `${process.env.PUBLIC_URL}/images/logo.png`,
     text: "Some quick example text to build on the card title and make up the bulk of the card's content.",
   },
   // 必要なだけカードデータを追加
@@ -118,7 +118,7 @@ function MainContents() {
                 <AnimatedDivBottom>
                   <img
                     className="profile-img"
-                    src="/imges/landing-page.png"
+                    src={`${process.env.PUBLIC_URL}/images/logo.png`}
                     alt="profileImage"
                   />
                 </AnimatedDivBottom>
