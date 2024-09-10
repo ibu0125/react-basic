@@ -48,7 +48,7 @@ const Canvas = () => {
           const distance = Math.sqrt(
             (point1.x - point2.x) ** 2 + (point1.y - point2.y) ** 2
           );
-          if (distance < 300) {
+          if (distance < 110) {
             ctx.moveTo(point1.x, point1.y);
             ctx.lineTo(point2.x, point2.y);
           }
