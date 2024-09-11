@@ -118,7 +118,7 @@ function MainContents() {
                 <AnimatedDivBottom>
                   <img
                     className="profile-img"
-                    src={`${process.env.PUBLIC_URL}/react-basic-scroll/imges/landing-page.png`}
+                    src={`${process.env.PUBLIC_URL}/imges/landing-page.png`}
                     alt="profileImage"
                   />
                 </AnimatedDivBottom>
