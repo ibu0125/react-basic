@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 function Header({ title, menuItems, onLinkClick }) {
   return (
@@ -9,16 +10,17 @@ function Header({ title, menuItems, onLinkClick }) {
         <ul className="nav-links">
           {menuItems.map((item, index) => (
             <li key={index}>
-              <a
-                href={`#${item}`}
+              <Link
+                to={item.link}
+                // href={`#${item}`}
                 className="nav-link"
                 onClick={(e) => {
-                  e.preventDefault();
+                  // e.preventDefault();
                   onLinkClick(item.image, item.name);
                 }}
               >
                 {item.name}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

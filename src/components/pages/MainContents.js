@@ -3,7 +3,8 @@ import "./MainContents.css";
 import AnimatedTextSide from "./AnimatedTextSide.js";
 import AnimatedDivBottom from "./AnimatedDivBottom.js";
 import AnimatedDivside from "./AnimatedDivside.js";
-import Form from "./Form.js";
+// import Form from "./Form.js";
+// import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 // import { Form } from "react-router-dom";
 
 // カードデータの配列を定義
@@ -322,14 +323,14 @@ function MainContents() {
           </AnimatedDivBottom>
         </div>
       </div>
-      <div className="contact">
+      {/* <div className="contact">
         <div className="head-line text">
           <AnimatedTextSide text={"Contact"} />
         </div>
         <div className="contact-form">
           <Form />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

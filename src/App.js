@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import Canvas from "./components/pages/AnimationPoints.js";
 import Home from "./components/pages/Home.js";
-import Header from "./components/pages/header.js";
+import Header from "./components/pages/Header.js";
 import MainContents from "./components/pages/MainContents.js";
 import "./assets/styles/App.css";
+import LocationWrapper from "./components/pages/LocationWrapper.js";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Form from "./components/pages/Form.js";
 
 function App() {
   const [backgroundImage, setBackgroundImage] = useState(
@@ -27,6 +30,7 @@ function App() {
       },
       {
         name: "Contact Me",
+        link: "form",
         // image: "/imges/pexels-wangming-photo-115695-354941.jpg",
       },
     ],
@@ -91,7 +95,7 @@ function App() {
             },
             {
               name: "Contact Me",
-              image: "/imges/pexels-wangming-photo-115695-354941.jpg",
+              link: "form",
             },
           ],
         }));
@@ -108,49 +112,87 @@ function App() {
 
   return (
     <div className="App">
-      <Header
-        title={headerTitle}
-        menuItems={[
-          { name: "Home", image: "/imges/pexels-jplenio-1632788.jpg" },
-          { name: "Project", image: "/path/to/project-image.jpg" },
-          { name: "About", image: "/path/to/about-image.jpg" },
-          { name: "Contact", image: "/path/to/contact-image.jpg" },
-        ]}
-        onLinkClick={(newImageUrl, linkName) =>
-          handleLinkClick(newImageUrl, linkName)
-        }
-      />
+      <Router>
+        <Header
+          title={headerTitle}
+          menuItems={[
+            { name: "Home", link: "/" },
+            { name: "Project", image: "/path/to/project-image.jpg" },
+            { name: "About", image: "/path/to/about-image.jpg" },
+            { name: "Contact", link: "/form" },
+          ]}
+          onLinkClick={(newImageUrl, linkName) =>
+            handleLinkClick(newImageUrl, linkName)
+          }
+        />
+        <LocationWrapper>
+          <Routes>
+            <Route
+              path="/form"
+              element={
+                <>
+                  <div className="form">
+                    <Form />
+                  </div>
+                  <div className="background-wrapper">
+                    <CSSTransition
+                      // in={showBackground}
+                      timeout={1200}
+                      classNames="background"
+                      unmountOnExit
+                    >
+                      <div
+                        className="background"
+                        style={{ backgroundImage: `url(${backgroundImage})` }}
+                      />
+                    </CSSTransition>
+                    <Canvas style={{ height: "10px" }} />
+                  </div>
+                </>
+              }
+            />
 
-      <Home
-        headLine={contents.headLine}
-        links={contents.links}
-        onLinkClick={(newImageUrl, linkName) =>
-          handleLinkClick(newImageUrl, linkName)
-        }
-      />
+            <Route
+              path="/"
+              element={
+                <>
+                  <Home
+                    headLine={contents.headLine}
+                    links={contents.links}
+                    onLinkClick={(newImageUrl, linkName) =>
+                      handleLinkClick(newImageUrl, linkName)
+                    }
+                  />
+                  <CSSTransition
+                    in={showContent}
+                    timeout={1200}
+                    classNames="content"
+                    unmountOnExit
+                  >
+                    <MainContents links={contents.links} />
+                  </CSSTransition>
+                  <div className="background-wrapper">
+                    <CSSTransition
+                      // in={showBackground}
+                      timeout={1200}
+                      classNames="background"
+                      unmountOnExit
+                    >
+                      <div
+                        className="background"
+                        style={{ backgroundImage: `url(${backgroundImage})` }}
+                      />
+                    </CSSTransition>
+                    <Canvas />
+                  </div>
+                </>
+              }
+            />
+          </Routes>
+        </LocationWrapper>
 
-      <div className="background-wrapper">
-        <CSSTransition
-          // in={showBackground}
-          timeout={1200}
-          classNames="background"
-          unmountOnExit
-        >
-          <div
-            className="background"
-            style={{ backgroundImage: `url(${backgroundImage})` }}
-          />
-        </CSSTransition>
-        <Canvas />
-      </div>
-      <CSSTransition
-        in={showContent}
-        timeout={1200}
-        classNames="content"
-        unmountOnExit
-      >
-        <MainContents links={contents.links} />
-      </CSSTransition>
+        {/* <Home /> */}
+      </Router>
     </div>
   );
 }

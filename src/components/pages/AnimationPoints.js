@@ -1,30 +1,38 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, useCallback } from "react";
+import { useLocation } from "react-router-dom";
 
 const Canvas = () => {
   const canvasRef = useRef(null);
   const points = useRef([]);
   const intervalRef = useRef(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [widthSize, setWidthSize] = useState(window.innerWidth);
+  const location = useLocation();
+  const [pointCount, setPointCount] = useState(300);
+  const [heightSize, setHeightSize] = useState(
+    document.documentElement.scrollHeight
+  );
+
+  // let pointCount = 300;
 
   // 初期化とアニメーションループの設定
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
-    const width = window.innerWidth;
-    const height = document.documentElement.scrollHeight;
+
     const interval = 1000 / 60; // 60 FPS
 
     // キャンバスの幅と高さを設定
-    canvas.width = width;
-    canvas.height = height;
+    canvas.width = widthSize;
+    canvas.height = heightSize;
 
     // 点の初期化
     const initPoints = () => {
       points.current = [];
-      for (let i = 0; i < 300; i++) {
+      for (let i = 0; i < pointCount; i++) {
         points.current.push({
-          x: Math.random() * width,
-          y: Math.random() * height,
+          x: Math.random() * widthSize,
+          y: Math.random() * heightSize,
           dx: (Math.random() - 0.5) * 2, // スピードを調整
           dy: (Math.random() - 0.5) * 2, // スピードを調整
           originalDx: 0,
@@ -35,7 +43,7 @@ const Canvas = () => {
 
     // アニメーションの描画
     const update = () => {
-      ctx.clearRect(0, 0, width, height);
+      ctx.clearRect(0, 0, widthSize, heightSize);
 
       // 線の描画
       ctx.strokeStyle = "rgba(255,255,255,0.8)";
@@ -62,8 +70,8 @@ const Canvas = () => {
         point.y += point.dy;
 
         // 境界での反射
-        if (point.x < 0 || point.x > width) point.dx *= -1;
-        if (point.y < 0 || point.y > height) point.dy *= -1;
+        if (point.x < 0 || point.x > widthSize) point.dx *= -1;
+        if (point.y < 0 || point.y > heightSize) point.dy *= -1;
 
         // 点の描画
         ctx.beginPath();
@@ -80,33 +88,55 @@ const Canvas = () => {
     return () => {
       clearInterval(intervalRef.current);
     };
+  }, [widthSize, heightSize, pointCount]);
+
+  const handleResizeHome = useCallback(() => {
+    const newWidthSize = window.innerWidth;
+    const newHeightSize = document.documentElement.scrollHeight;
+
+    setPointCount(300);
+    setWidthSize(newWidthSize);
+    setHeightSize(newHeightSize);
+  }, []);
+
+  const handleResizeForm = useCallback(() => {
+    const newWidthSize = window.innerWidth;
+    const newHeightSize = window.innerHeight;
+
+    setPointCount(90);
+    setWidthSize(newWidthSize);
+    setHeightSize(newHeightSize);
   }, []);
 
   useEffect(() => {
-    const handleResize = () => {
-      const canvas = canvasRef.current;
-      const width = window.innerWidth;
-      const height = document.documentElement.scrollHeight;
-
-      canvas.width = width;
-      canvas.height = height;
-
-      // キャンバスサイズが変わったら点の位置を再設定
-      points.current.forEach((point) => {
-        point.x = Math.random() * width;
-        point.y = Math.random() * height;
-      });
-    };
-
-    window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResizeHome);
 
     // 初期サイズ設定
-    handleResize();
+    handleResizeHome();
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", handleResizeHome);
     };
-  }, []);
+  }, [handleResizeHome]);
+
+  useEffect(() => {
+    const updateSize = () => {
+      const isFormPage = location.pathname === "/form";
+
+      if (isFormPage) {
+        handleResizeForm();
+      } else {
+        setTimeout(() => {
+          handleResizeHome();
+        }, 0);
+      }
+    };
+
+    // ページが変更されたときにリサイズ処理を実行
+    updateSize();
+
+    // 依存関係に location を含める
+  }, [location, handleResizeForm, handleResizeHome]);
 
   // マウス位置に基づいて点の動きを調整
   useEffect(() => {
