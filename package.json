@@ -1,7 +1,7 @@
 {
-  "homepage": "https://ibu0125.github.io/react-basic-scroll",
   "name": "react-basic",
   "version": "0.1.0",
+  "homepage": "https://ibu0125.github.io/react-basic-scroll",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
