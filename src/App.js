@@ -117,8 +117,10 @@ function App() {
           title={headerTitle}
           menuItems={[
             { name: "Home", link: "/" },
-            { name: "Project", image: "/path/to/project-image.jpg" },
-            { name: "About", image: "/path/to/about-image.jpg" },
+            { name: "Profile", link: "/" },
+            { name: "Skill", link: "/" },
+            { name: "Works", link: "/" },
+            { name: "Career", link: "/" },
             { name: "Contact", link: "/form" },
           ]}
           onLinkClick={(newImageUrl, linkName) =>
