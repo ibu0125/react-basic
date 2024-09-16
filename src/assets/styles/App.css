@@ -110,3 +110,7 @@ canvas {
 a {
   text-decoration: none;
 }
+
+.fooer-wrapper {
+  overflow-x: hidden;
+}

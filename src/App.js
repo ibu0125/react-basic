@@ -8,6 +8,7 @@ import "./assets/styles/App.css";
 import LocationWrapper from "./components/pages/LocationWrapper.js";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Form from "./components/pages/Form.js";
+import Footer from "./components/pages/Footer.js";
 
 function App() {
   const [backgroundImage, setBackgroundImage] = useState(
@@ -150,6 +151,9 @@ function App() {
                     </CSSTransition>
                     <Canvas style={{ height: "10px" }} />
                   </div>
+                  <div className="footer-wrapper">
+                    <Footer />
+                  </div>
                 </>
               }
             />
@@ -187,6 +191,20 @@ function App() {
                     </CSSTransition>
                     <Canvas />
                   </div>
+                  <Footer
+                    // title={headerTitle}
+                    menuItems={[
+                      { name: "Home", link: "/" },
+                      { name: "Profile", link: "/" },
+                      { name: "Skill", link: "/" },
+                      { name: "Works", link: "/" },
+                      { name: "Career", link: "/" },
+                      { name: "Contact", link: "/form" },
+                    ]}
+                    onLinkClick={(newImageUrl, linkName) =>
+                      handleLinkClick(newImageUrl, linkName)
+                    }
+                  />
                 </>
               }
             />

@@ -103,7 +103,7 @@ const Canvas = () => {
     const newWidthSize = window.innerWidth;
     const newHeightSize = window.innerHeight;
 
-    setPointCount(90);
+    setPointCount(50);
     setWidthSize(newWidthSize);
     setHeightSize(newHeightSize);
   }, []);

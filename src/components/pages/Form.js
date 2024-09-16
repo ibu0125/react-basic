@@ -36,10 +36,17 @@ function Form() {
         <input
           id="password"
           type="password"
-          {...register("password", { required: "パスワードは必須です" })}
+          {...register("password", { required: "※パスワードは必須です" })}
         />
         <p className="error-message">{errors.password?.message}</p>
 
+        <label htmlFor="textbox">お問い合わせ</label>
+        <textarea
+          id="message"
+          name="message"
+          style={{ height: "100px", width: "100%" }}
+        />
+        <p className="error-message">{errors.textbox?.message}</p>
         <button type="submit">送信</button>
       </form>
     </div>
