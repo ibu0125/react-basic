@@ -11,6 +11,7 @@
 
 /* フォームのコンテナ */
 .form-container {
+  isolation: isolate;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -22,7 +23,8 @@
   /* width: 100%; */
   max-width: 400px;
   position: relative;
-  z-index: 3;
+  z-index: 1001;
+  opacity: 1;
   /* margin: auto; */
 }
 

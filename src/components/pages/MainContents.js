@@ -108,7 +108,7 @@ const skillSetData = [
 function MainContents() {
   return (
     <div className="content">
-      <div className="my-profile">
+      <div className="my-profile" id="my-profile">
         <div className="head-line text">
           <AnimatedTextSide text={"My Profile"} />
         </div>
@@ -195,7 +195,7 @@ function MainContents() {
           </div>
         </div>
       </div>
-      <div className="head-line text">
+      <div className="head-line text" id="my-skill-set">
         <AnimatedTextSide text={"My Skill Set"} />
       </div>
       <div className="my-skill-set">
@@ -228,7 +228,7 @@ function MainContents() {
           </AnimatedDivBottom>
         ))}
       </div>
-      <div className="head-line text">
+      <div className="head-line text" id="my-works">
         <AnimatedTextSide text={"My Works"} />
       </div>
       <div className="main-contents-wrapper">
@@ -259,7 +259,7 @@ function MainContents() {
           </AnimatedDivBottom>
         ))}
       </div>
-      <div className="my-career">
+      <div className="my-career" id="my-career">
         <div className="head-line text">
           <AnimatedTextSide text={"My Career"} />
         </div>

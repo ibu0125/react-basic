@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState, useCallback } from "react";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 
 const Canvas = () => {
   const canvasRef = useRef(null);
@@ -7,7 +7,7 @@ const Canvas = () => {
   const intervalRef = useRef(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [widthSize, setWidthSize] = useState(window.innerWidth);
-  const location = useLocation();
+  // const location = useLocation();
   const [pointCount, setPointCount] = useState(300);
   const [heightSize, setHeightSize] = useState(
     document.documentElement.scrollHeight
@@ -99,14 +99,14 @@ const Canvas = () => {
     setHeightSize(newHeightSize);
   }, []);
 
-  const handleResizeForm = useCallback(() => {
-    const newWidthSize = window.innerWidth;
-    const newHeightSize = window.innerHeight;
+  // const handleResizeForm = useCallback(() => {
+  //   const newWidthSize = window.innerWidth;
+  //   const newHeightSize = window.innerHeight;
 
-    setPointCount(50);
-    setWidthSize(newWidthSize);
-    setHeightSize(newHeightSize);
-  }, []);
+  //   setPointCount(50);
+  //   setWidthSize(newWidthSize);
+  //   setHeightSize(newHeightSize);
+  // }, []);
 
   useEffect(() => {
     window.addEventListener("resize", handleResizeHome);
@@ -119,24 +119,24 @@ const Canvas = () => {
     };
   }, [handleResizeHome]);
 
-  useEffect(() => {
-    const updateSize = () => {
-      const isFormPage = location.pathname === "/form";
+  // useEffect(() => {
+  //   const updateSize = () => {
+  //     // const isFormPage = location.pathname === "/form";
 
-      if (isFormPage) {
-        handleResizeForm();
-      } else {
-        setTimeout(() => {
-          handleResizeHome();
-        }, 0);
-      }
-    };
+  //     if (isFormPage) {
+  //       handleResizeForm();
+  //     } else {
+  //       setTimeout(() => {
+  //         handleResizeHome();
+  //       }, 0);
+  //     }
+  //   };
 
-    // ページが変更されたときにリサイズ処理を実行
-    updateSize();
+  // ページが変更されたときにリサイズ処理を実行
+  // updateSize();
 
-    // 依存関係に location を含める
-  }, [location, handleResizeForm, handleResizeHome]);
+  // 依存関係に location を含める
+  // }, [location, handleResizeForm, handleResizeHome]);
 
   // マウス位置に基づいて点の動きを調整
   useEffect(() => {

@@ -23,6 +23,7 @@
 }
 
 .nav-links {
+  margin-right: 20px;
   list-style: none;
   display: flex;
   /* gap: 30%; */
@@ -45,4 +46,22 @@
 
 .nav-links li a:hover {
   text-decoration: underline;
+}
+
+.nav-link-last {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link-last:hover {
+  text-decoration: underline;
+}
+
+.nav-link-last:active {
+  color: brown;
+}
+
+.active-header {
+  opacity: 0;
 }

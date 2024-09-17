@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.css";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { ScrollLink } from "react-scroll";
 
 function Footer({ title, menuItems = [], onLinkClick }) {
   return (
@@ -13,7 +14,7 @@ function Footer({ title, menuItems = [], onLinkClick }) {
               {menuItems.length > 0 ? (
                 menuItems.map((item, index) => (
                   <li key={index}>
-                    <Link
+                    <ScrollLink
                       to={item.link}
                       className="footer-nav-link"
                       onClick={(e) => {
@@ -21,7 +22,7 @@ function Footer({ title, menuItems = [], onLinkClick }) {
                       }}
                     >
                       {item.name}
-                    </Link>
+                    </ScrollLink>
                   </li>
                 ))
               ) : (
@@ -34,7 +35,7 @@ function Footer({ title, menuItems = [], onLinkClick }) {
         <div className="footer-rayout3">
           <div className="quick-links">
             <a href="#top">トップに戻る</a> |
-            <Link to="/projects">プロジェクト一覧</Link>
+            <ScrollLink to="/projects">プロジェクト一覧</ScrollLink>
           </div>
           <div className="footer-contact-wrapper">
             <div className="contact-info">
