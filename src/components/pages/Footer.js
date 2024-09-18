@@ -1,12 +1,11 @@
 import React from "react";
 import "./Footer.css";
 // import { Link } from "react-router-dom";
-import { ScrollLink } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
 
 function Footer({ title, menuItems = [], onLinkClick }) {
   return (
     <footer className="footer">
-      {/* <div className="logo">{title}</div> */}
       <div className="footer-rayout">
         <div className="footer-rayout1">
           <nav>
@@ -14,15 +13,29 @@ function Footer({ title, menuItems = [], onLinkClick }) {
               {menuItems.length > 0 ? (
                 menuItems.map((item, index) => (
                   <li key={index}>
-                    <ScrollLink
-                      to={item.link}
-                      className="footer-nav-link"
-                      onClick={(e) => {
-                        onLinkClick(item.image, item.name);
-                      }}
-                    >
-                      {item.name}
-                    </ScrollLink>
+                    {index !== menuItems.length - 1 ? (
+                      <ScrollLink
+                        to={item.title}
+                        smooth={true}
+                        duration={500}
+                        className="footer-nav-link"
+                        onClick={(e) => {
+                          onLinkClick(item.image, item.name);
+                        }}
+                      >
+                        {item.name}
+                      </ScrollLink>
+                    ) : (
+                      <div
+                        className="footer-nav-link"
+                        onClick={(e) => {
+                          // e.preventDefault();
+                          onLinkClick(item.image, item.name);
+                        }}
+                      >
+                        {item.name}
+                      </div>
+                    )}
                   </li>
                 ))
               ) : (
@@ -34,8 +47,10 @@ function Footer({ title, menuItems = [], onLinkClick }) {
         <div className="footer-rayout2"></div>
         <div className="footer-rayout3">
           <div className="quick-links">
-            <a href="#top">トップに戻る</a> |
-            <ScrollLink to="/projects">プロジェクト一覧</ScrollLink>
+            <ScrollLink to="hello-world" smooth={true} duration={500}>
+              トップに戻る
+            </ScrollLink>{" "}
+            |<ScrollLink to="/projects">プロジェクト一覧</ScrollLink>
           </div>
           <div className="footer-contact-wrapper">
             <div className="contact-info">

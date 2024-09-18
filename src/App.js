@@ -125,12 +125,11 @@ function App() {
   return (
     <div className="App">
       <div className={isActive ? "active-all-container" : "all-container"}>
-        <div className="form">
-          <Form />
-        </div>
+        <Form setActive={setIsActive} />
       </div>
 
       <Header
+        setActive={setIsActive}
         className={isActive ? "active-header" : null}
         title={headerTitle}
         menuItems={[
@@ -177,12 +176,12 @@ function App() {
       <Footer
         // title={headerTitle}
         menuItems={[
-          { name: "Home", link: "/" },
-          { name: "Profile", link: "/" },
-          { name: "Skill", link: "/" },
-          { name: "Works", link: "/" },
-          { name: "Career", link: "/" },
-          { name: "Contact", link: "/form" },
+          { name: "Home", title: "hello-world", link: "/" },
+          { name: "Profile", title: "my-profile", link: "/" },
+          { name: "Skill", title: "my-skill-set", link: "/" },
+          { name: "Works", title: "my-works", link: "/" },
+          { name: "Career", title: "my-career", link: "/" },
+          { name: "Contact", title: "form", link: "/form" },
         ]}
         onLinkClick={(newImageUrl, linkName) =>
           handleLinkClick(newImageUrl, linkName)
