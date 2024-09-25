@@ -1,33 +1,30 @@
 import React, { useState } from "react";
 import "./Header.css";
 import { Link as ScrollLink } from "react-scroll";
-// import Form from "./Form";
 
-function Header({ title, menuItems, onLinkClick, setActive }) {
+function Header({
+  title,
+  menuItems,
+  onLinkClick,
+  setActive,
+  className,
+  onActiveChange,
+}) {
   const [isActive, setIsActive] = useState(false);
-  // const [isActive, setIsActive] = useState(true);
+  console.log(isActive);
   const toggleClass = () => {
     const newState = !isActive;
-    setIsActive(newState);
+    console.log(isActive);
+
+    onActiveChange(true); // 状態をAppに通知
+
+    setIsActive(!newState);
     setActive(newState);
-  };
-  const handleLinkClick = (newImageUrl, linkName) => {
-    if (linkName === "Contact") {
-      setTimeout(() => {
-        if (linkName === "Contact") {
-          setIsActive(true); // 背景を暗くする
-        } else {
-          setIsActive(false); // 他のリンクでは背景を元に戻す
-        }
-      }, 0);
-    }
+    console.log(isActive);
   };
   return (
     <div>
-      <header
-        className={isActive ? "active-header" : "header"}
-        style={{ position: "fixed" }}
-      >
+      <header className="header" style={{ position: "fixed" }}>
         <div className="logo">{title}</div>
 
         <nav>
@@ -39,23 +36,15 @@ function Header({ title, menuItems, onLinkClick, setActive }) {
                     to={item.title}
                     smooth={true}
                     duration={500}
-                    // href={`#${item}`}
                     className="nav-link"
-                    onClick={(e) => {
-                      // e.preventDefault();
-                      onLinkClick(item.image, item.name);
-                    }}
+                    onClick={(e) => onLinkClick(item.name)}
                   >
                     {item.name}
                   </ScrollLink>
                 ) : (
                   <div
                     className="nav-link nav-link-last"
-                    onClick={(e) => {
-                      // e.preventDefault();
-                      onLinkClick(item.image, item.name);
-                      handleLinkClick(item.image, item.name);
-                    }}
+                    onClick={(e) => onLinkClick(item.name)}
                   >
                     {item.name}
                   </div>
@@ -66,7 +55,7 @@ function Header({ title, menuItems, onLinkClick, setActive }) {
         </nav>
       </header>
       <div
-        className={isActive ? "active-button" : "button"}
+        className={className ? "active-button" : "button"}
         id="back-button"
         onClick={toggleClass}
       >

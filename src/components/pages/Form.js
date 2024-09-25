@@ -3,15 +3,6 @@ import "./Form.css";
 import { useForm } from "react-hook-form";
 
 function Form() {
-  // useEffect(() => {
-  //   setActive(!isActive);
-  // }, [isActive, setActive]);
-
-  // const handleLinkClick = (id) => {
-  //   if (id === "back-button") {
-  //     setIsActive(true);
-  //   }
-  // };
   const {
     register,
     handleSubmit,

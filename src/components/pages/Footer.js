@@ -3,7 +3,16 @@ import "./Footer.css";
 // import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 
-function Footer({ title, menuItems = [], onLinkClick }) {
+function Footer({ title, menuItems = [], onLinkClick, onActiveChange }) {
+  const handleClick = (linkName) => {
+    if (linkName === "Contact") {
+      onActiveChange(true); // 状態をAppに通知
+      console.log(onActiveChange);
+    } else {
+      onActiveChange(false); // 状態をAppに通知
+    }
+    onLinkClick(linkName);
+  };
   return (
     <footer className="footer">
       <div className="footer-rayout">
@@ -20,7 +29,7 @@ function Footer({ title, menuItems = [], onLinkClick }) {
                         duration={500}
                         className="footer-nav-link"
                         onClick={(e) => {
-                          onLinkClick(item.image, item.name);
+                          onLinkClick(item.name);
                         }}
                       >
                         {item.name}
@@ -28,10 +37,7 @@ function Footer({ title, menuItems = [], onLinkClick }) {
                     ) : (
                       <div
                         className="footer-nav-link"
-                        onClick={(e) => {
-                          // e.preventDefault();
-                          onLinkClick(item.image, item.name);
-                        }}
+                        onClick={() => handleClick(item.name)}
                       >
                         {item.name}
                       </div>

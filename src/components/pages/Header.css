@@ -63,5 +63,20 @@
 }
 
 .active-header {
+  z-index: 100;
+  position: fixed;
+  top: 0; /* 画面の上部に固定 */
+  right: 0;
+  left: 0;
+  max-width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  padding-right: 250px;
+  color: white;
+  pointer-events: none;
   opacity: 0;
 }
