@@ -1,0 +1,18 @@
+[
+  {
+    "ContainingType": "backendApp.Controllers.FormController",
+    "Method": "Submit",
+    "RelativePath": "api/Form/submit",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "backendApp.Models.Infomation",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
