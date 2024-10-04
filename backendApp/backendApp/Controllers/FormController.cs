@@ -1,39 +1,49 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MySql.Data.MySqlClient;
 using backendApp.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
 
 namespace backendApp.Controllers {
     [ApiController]
-    [Route("api/[Controller]")]
+    [Route("api/[controller]")]
     public class FormController : ControllerBase {
-        private readonly string connectionString = "Server=localhost;Database=UserInformationDb;User=root;Password=Ibuki0606#;";
+        private readonly ApplicationDbContext _context;
+
+        public FormController(ApplicationDbContext context) {
+            _context = context; // コンストラクタでContextを初期化
+        }
 
         [HttpPost("submit")]
-        public IActionResult Submit([FromBody] Infomation user) {
+        public async Task<IActionResult> Submit([FromBody] Infomation user) {
             Console.WriteLine($"Name: {user.Name}, Email: {user.Email}, Message: {user.Message}");
-            using MySqlConnection connection = new MySqlConnection(connectionString);
+
             try {
-                connection.Open();
-
-                string submitQuery = "INSERT INTO UserInfo (Name, Email, Message) VALUES (@Name, @Email, @Message)";
-                using(MySqlCommand cmd = new MySqlCommand(submitQuery, connection)) {
-                    cmd.Parameters.AddWithValue("@Name", user.Name);
-                    cmd.Parameters.AddWithValue("@Email", user.Email);
-                    cmd.Parameters.AddWithValue("@Message", user.Message);
-                    cmd.ExecuteNonQuery();
-                }
-
+                await _context.UserInfo.AddAsync(user); // ここでの user は Infomation 型でなければならない
+                await _context.SaveChangesAsync(); // 変更をデータベースに保存
                 return Ok(new
                 {
-                    message = "送信しました" // タイポを修正
+                    message = "送信しました"
                 });
             }
             catch(Exception ex) {
-                // エラーログを追加することをお勧めします
-                Console.WriteLine($"Error: {ex.Message}"); // ログにエラーを表示
+                Console.WriteLine($"Error: {ex.Message}");
                 return StatusCode(500, new
                 {
                     message = ex.Message
+                });
+            }
+        }
+        [HttpGet("contacts")]
+        public async Task<IActionResult> GetContacts() {
+            try {
+                var contacts = await _context.UserInfo.ToListAsync();
+                return Ok(contacts);
+            }
+            catch(Exception ex) {
+                Console.WriteLine($"Error fetching contacts: {ex.Message}");
+                return StatusCode(500, new
+                {
+                    message = "データ取得中にエラーが発生しました"
                 });
             }
         }

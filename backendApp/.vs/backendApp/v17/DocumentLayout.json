@@ -3,24 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\ibuki\\source\\myPortfolio\\backendApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5B6D098B-3FC6-4FC0-A73E-0CCEC0F4D127}|backendApp\\backendApp.csproj|c:\\users\\ibuki\\source\\myportfolio\\backendapp\\backendapp\\controllers\\formcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5B6D098B-3FC6-4FC0-A73E-0CCEC0F4D127}|backendApp\\backendApp.csproj|solutionrelative:backendapp\\controllers\\formcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B6D098B-3FC6-4FC0-A73E-0CCEC0F4D127}|backendApp\\backendApp.csproj|c:\\users\\ibuki\\source\\myportfolio\\backendapp\\backendapp\\models\\infomation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5B6D098B-3FC6-4FC0-A73E-0CCEC0F4D127}|backendApp\\backendApp.csproj|solutionrelative:backendapp\\models\\infomation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B6D098B-3FC6-4FC0-A73E-0CCEC0F4D127}|backendApp\\backendApp.csproj|c:\\users\\ibuki\\source\\myportfolio\\backendapp\\backendapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{5B6D098B-3FC6-4FC0-A73E-0CCEC0F4D127}|backendApp\\backendApp.csproj|solutionrelative:backendapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5B6D098B-3FC6-4FC0-A73E-0CCEC0F4D127}|backendApp\\backendApp.csproj|c:\\users\\ibuki\\source\\myportfolio\\backendapp\\backendapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5B6D098B-3FC6-4FC0-A73E-0CCEC0F4D127}|backendApp\\backendApp.csproj|solutionrelative:backendapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5B6D098B-3FC6-4FC0-A73E-0CCEC0F4D127}|backendApp\\backendApp.csproj|c:\\users\\ibuki\\source\\myportfolio\\backendapp\\backendapp\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{5B6D098B-3FC6-4FC0-A73E-0CCEC0F4D127}|backendApp\\backendApp.csproj|solutionrelative:backendapp\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{5B6D098B-3FC6-4FC0-A73E-0CCEC0F4D127}|backendApp\\backendApp.csproj|c:\\users\\ibuki\\source\\myportfolio\\backendapp\\backendapp\\controllers\\formcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B6D098B-3FC6-4FC0-A73E-0CCEC0F4D127}|backendApp\\backendApp.csproj|solutionrelative:backendapp\\controllers\\formcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98568A0D-429E-42BC-BFA9-CA99D11BC0B4}|Adomin\\Adomin.csproj|c:\\users\\ibuki\\source\\myportfolio\\backendapp\\adomin\\controllers\\adomincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98568A0D-429E-42BC-BFA9-CA99D11BC0B4}|Adomin\\Adomin.csproj|solutionrelative:adomin\\controllers\\adomincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98568A0D-429E-42BC-BFA9-CA99D11BC0B4}|Adomin\\Adomin.csproj|c:\\users\\ibuki\\source\\myportfolio\\backendapp\\adomin\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98568A0D-429E-42BC-BFA9-CA99D11BC0B4}|Adomin\\Adomin.csproj|solutionrelative:adomin\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98568A0D-429E-42BC-BFA9-CA99D11BC0B4}|Adomin\\Adomin.csproj|c:\\users\\ibuki\\source\\myportfolio\\backendapp\\adomin\\adomin.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{98568A0D-429E-42BC-BFA9-CA99D11BC0B4}|Adomin\\Adomin.csproj|solutionrelative:adomin\\adomin.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98568A0D-429E-42BC-BFA9-CA99D11BC0B4}|Adomin\\Adomin.csproj|c:\\users\\ibuki\\source\\myportfolio\\backendapp\\adomin\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{98568A0D-429E-42BC-BFA9-CA99D11BC0B4}|Adomin\\Adomin.csproj|solutionrelative:adomin\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B6D098B-3FC6-4FC0-A73E-0CCEC0F4D127}|backendApp\\backendApp.csproj|c:\\users\\ibuki\\source\\myportfolio\\backendapp\\backendapp\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B6D098B-3FC6-4FC0-A73E-0CCEC0F4D127}|backendApp\\backendApp.csproj|solutionrelative:backendapp\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,46 +38,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\ibuki\\source\\myPortfolio\\backendApp\\backendApp\\appsettings.json",
-              "RelativeDocumentMoniker": "backendApp\\appsettings.json",
-              "ToolTip": "C:\\Users\\ibuki\\source\\myPortfolio\\backendApp\\backendApp\\appsettings.json",
-              "RelativeToolTip": "backendApp\\appsettings.json",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAYwAkAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-03T14:59:18.635Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\ibuki\\source\\myPortfolio\\backendApp\\backendApp\\Program.cs",
-              "RelativeDocumentMoniker": "backendApp\\Program.cs",
-              "ToolTip": "C:\\Users\\ibuki\\source\\myPortfolio\\backendApp\\backendApp\\Program.cs",
-              "RelativeToolTip": "backendApp\\Program.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAgwCgAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\ibuki\\source\\myPortfolio\\backendApp\\Adomin\\Program.cs",
+              "RelativeDocumentMoniker": "Adomin\\Program.cs",
+              "ToolTip": "C:\\Users\\ibuki\\source\\myPortfolio\\backendApp\\Adomin\\Program.cs",
+              "RelativeToolTip": "Adomin\\Program.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwA4AAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T14:50:24.024Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\ibuki\\source\\myPortfolio\\backendApp\\backendApp\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "backendApp\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\ibuki\\source\\myPortfolio\\backendApp\\backendApp\\Properties\\launchSettings.json",
-              "RelativeToolTip": "backendApp\\Properties\\launchSettings.json",
-              "ViewState": "AgIAABAAAAAAAAAAAAAYwBYAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-03T14:30:09.499Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-03T20:04:00.058Z",
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -77,29 +59,77 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Infomation.cs",
-              "DocumentMoniker": "C:\\Users\\ibuki\\source\\myPortfolio\\backendApp\\backendApp\\Models\\Infomation.cs",
-              "RelativeDocumentMoniker": "backendApp\\Models\\Infomation.cs",
-              "ToolTip": "C:\\Users\\ibuki\\source\\myPortfolio\\backendApp\\backendApp\\Models\\Infomation.cs",
-              "RelativeToolTip": "backendApp\\Models\\Infomation.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ibuki\\source\\myPortfolio\\backendApp\\backendApp\\Program.cs",
+              "RelativeDocumentMoniker": "backendApp\\Program.cs",
+              "ToolTip": "C:\\Users\\ibuki\\source\\myPortfolio\\backendApp\\backendApp\\Program.cs",
+              "RelativeToolTip": "backendApp\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAYwAoAAABkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T13:52:34.758Z",
+              "WhenOpened": "2024-10-04T05:54:56.015Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "FormController.cs",
               "DocumentMoniker": "C:\\Users\\ibuki\\source\\myPortfolio\\backendApp\\backendApp\\Controllers\\FormController.cs",
               "RelativeDocumentMoniker": "backendApp\\Controllers\\FormController.cs",
               "ToolTip": "C:\\Users\\ibuki\\source\\myPortfolio\\backendApp\\backendApp\\Controllers\\FormController.cs",
               "RelativeToolTip": "backendApp\\Controllers\\FormController.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAYwCkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACMAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T13:51:31.216Z",
+              "WhenOpened": "2024-10-03T20:23:40.171Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdominController.cs",
+              "DocumentMoniker": "C:\\Users\\ibuki\\source\\myPortfolio\\backendApp\\Adomin\\Controllers\\AdominController.cs",
+              "RelativeDocumentMoniker": "Adomin\\Controllers\\AdominController.cs",
+              "ToolTip": "C:\\Users\\ibuki\\source\\myPortfolio\\backendApp\\Adomin\\Controllers\\AdominController.cs",
+              "RelativeToolTip": "Adomin\\Controllers\\AdominController.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAQwFQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T20:09:38.395Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\ibuki\\source\\myPortfolio\\backendApp\\Adomin\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Adomin\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\ibuki\\source\\myPortfolio\\backendApp\\Adomin\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Adomin\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-03T20:08:23.912Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Adomin.csproj",
+              "DocumentMoniker": "C:\\Users\\ibuki\\source\\myPortfolio\\backendApp\\Adomin\\Adomin.csproj",
+              "RelativeDocumentMoniker": "Adomin\\Adomin.csproj",
+              "ToolTip": "C:\\Users\\ibuki\\source\\myPortfolio\\backendApp\\Adomin\\Adomin.csproj",
+              "RelativeToolTip": "Adomin\\Adomin.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-03T20:04:18.657Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\ibuki\\source\\myPortfolio\\backendApp\\backendApp\\Models\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "backendApp\\Models\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\ibuki\\source\\myPortfolio\\backendApp\\backendApp\\Models\\ApplicationDbContext.cs",
+              "RelativeToolTip": "backendApp\\Models\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T18:39:29.482Z"
             }
           ]
         }
